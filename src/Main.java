@@ -13,6 +13,10 @@ public class Main {
         //test.test_fourSum();
 
         //test.test_nextPermutation();
-        test.test_lengthOfLongestSubstring();
+        //test.test_lengthOfLongestSubstring();
+
+        //System.out.println(-1/2);
+        //test.test_longestPalindrome();
+        test.test_convert();
     }
 }

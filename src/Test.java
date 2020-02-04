@@ -8,8 +8,8 @@ public class Test {
 
     public void test_findMedianSortedArrays(){
         ArrayTag arrayTag = new ArrayTag();
-        int[] nums1 = {100001};
-        int[] nums2 = {100000};
+        int[] nums1 = {};
+        int[] nums2 = {1,2,3,4,5};
         double medium = arrayTag.findMedianSortedArrays(nums1, nums2);
         System.out.println(medium);
     }
@@ -33,5 +33,18 @@ public class Test {
         String s = "gwregvrvf4wfwefasfeaf";
         StringTag stringTag = new StringTag();
         System.out.println(stringTag.lengthOfLongestSubstring(s));
+    }
+
+    void test_longestPalindrome() {
+        String s = "aaabaaaa";
+        StringTag stringTag = new StringTag();
+        System.out.println(stringTag.longestPalindrome(s));
+    }
+
+    void test_convert() {
+        String s = "LEETCODEISHIRING";
+        int numRows = 4;
+        StringTag stringTag = new StringTag();
+        System.out.println(stringTag.convert(s, numRows));
     }
 }

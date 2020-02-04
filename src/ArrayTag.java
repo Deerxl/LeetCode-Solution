@@ -68,7 +68,8 @@ public class ArrayTag {
         /**
          * 递归法
          */
-        int m = nums1.length;
+
+        /*int m = nums1.length;
         int n = nums2.length;
 
         // to ensure m <= n
@@ -118,6 +119,56 @@ public class ArrayTag {
 
                 return (double) (minRight + maxLeft) / 2;
 
+            }
+        }
+
+        return 0.0;*/
+
+        int m = nums1.length;
+        int n = nums2.length;
+        if (m > n) {
+            int[] temp = nums1;
+            nums1 = nums2;
+            nums2 = temp;
+
+            int tmp = m;
+            m = n;
+            n = tmp;
+        }
+
+        int i = (m + 1) / 2;
+        int halfLen = (m + n + 1) / 2;
+        int j = halfLen - i;
+
+        while (i >= 0 && i <= m) {
+            if (i < m && nums1[i] < nums2[j - 1]) {
+                i += 1;
+                j -= 1;
+            } else if (i > 0 && nums1[i - 1] > nums2[j]) {
+                i -= 1;
+                j += 1;
+            } else {
+                int odd = (m + n) % 2;
+                int maxLeft, minRight;
+
+                if (m == 0 || i == 0) {
+                    maxLeft = j > 0 ? nums2[j - 1] : nums2[j];
+                } else {
+                    maxLeft = j > 0 ? Math.max(nums1[i - 1], nums2[j - 1]) : nums1[i - 1];
+                }
+
+                if (odd == 1) {
+                    return maxLeft;
+                } else {
+                    if (i == m) {
+                        minRight = nums2[j];
+                    } else if (j == n) {
+                        minRight = nums1[i];
+                    } else {
+                        minRight = Math.min(nums1[i], nums2[j]);
+                    }
+                    return (double)(maxLeft + minRight) / 2 ;
+                }
             }
         }
 
