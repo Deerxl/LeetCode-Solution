@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Hashtable;
+import java.util.*;
 
 class StringTag {
     /**
@@ -181,4 +179,71 @@ class StringTag {
             return i - j;
         else return -1;
     }
+
+    /** 找匹配子串的所有index 比较麻烦。。最后超出时间限制。。
+    public List<Integer> findSubstring(String s, String[] words) {
+        List<Integer> results = new ArrayList<>();
+        if (words == null || words.length == 0) return results;
+        int wLength = words[0].length();    //单词的长度
+        Map<Integer, String> map = new HashMap<>();
+        for (int i = 0; i < words.length; i++) {
+            map.put(i, words[i]);
+        }
+
+        Map<Integer, Integer> recMap = new HashMap<>();     //记录 words的索引和s的索引
+        int startIndex = 0;
+        int i = 0;
+        //for (int i = 0; i < s.length(); i++) {
+        while (i <= s.length() - wLength) {
+            String curStr = s.substring(i, i + wLength);
+            if (!map.containsValue(curStr)) {
+                recMap.clear();
+                i = startIndex + 1;
+                startIndex = i;
+                //i += 1;
+                continue;
+            }
+            int index = uniqueIndexOfWords(recMap, containWord(map, curStr));
+            if (index != -1) {
+                if (recMap.size() == 0) startIndex = i;
+                recMap.put(index, i);
+                i += wLength;
+            } else {
+                //i = startIndex + wLength;
+
+                i = startIndex + 1;
+                recMap.clear();
+            }
+
+            if (recMap.size() == words.length) {
+                results.add(startIndex);
+                recMap.clear();
+                //i = startIndex + wLength;
+                i = startIndex + 1;
+            }
+        }
+
+        return results;
+    }
+
+    private List<Integer> containWord(Map map, String word) {    //返回words中含有word的所有索引
+        List<Integer> keys = new ArrayList<>();
+        for (Object key : map.keySet()) {
+            if (map.get(key).equals(word))
+                keys.add((Integer) key);
+        }
+        return keys;
+    }
+
+    private int uniqueIndexOfWords(Map recMap, List<Integer> keys) {     //返回没有被用到的索引
+        if (keys == null || keys.size() == 0) return -1;
+        for (int i = 0; i < keys.size(); i++) {
+            if (!recMap.containsKey(keys.get(i))) return keys.get(i);
+        }
+        return -1;
+    }
+
+     */
+
+
 }

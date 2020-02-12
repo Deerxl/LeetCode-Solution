@@ -118,4 +118,17 @@ public class Test {
         MathTag mathTag = new MathTag();
         System.out.println(div1 / div2 + "      " + mathTag.divide(div1, div2));
     }
+
+    void test_findSubstring() {
+        String s = "barfoofoobarthefoobarman";
+        String[] words = new String[] {"bar","foo","the"};
+        StringTag stringTag = new StringTag();
+        //System.out.println(stringTag.findSubstring(s, words));
+    }
+
+    void test_longestValidParentheses() {
+        String s = ")()())";
+        DynamicProgrammingTag dynamicProgrammingTag = new DynamicProgrammingTag();
+        System.out.println(dynamicProgrammingTag.longestValidParentheses(s));
+    }
 }

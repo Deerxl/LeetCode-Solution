@@ -26,6 +26,8 @@ public class Main {
         //test.test_removeNthFromEnd();
         //test.test_swapPairs();
         //test.test_strStr();
-        test.test_divide();
+        //test.test_divide();
+        //test.test_findSubstring();
+        test.test_longestValidParentheses();
     }
 }
