@@ -47,4 +47,75 @@ public class Test {
         StringTag stringTag = new StringTag();
         System.out.println(stringTag.convert(s, numRows));
     }
+
+    void test_reverse() {
+        int x = -54321;
+        MathTag mathTag = new MathTag();
+        System.out.println(mathTag.reverse(x));
+    }
+
+    void test_myAtoi() {
+        String s = "2147483648";
+        MathTag mathTag = new MathTag();
+        System.out.println(mathTag.myAtoi(s));
+    }
+
+    void test_intToRoman() {
+        int num = 1994;
+        MathTag mathTag = new MathTag();
+        System.out.println(mathTag.intToRoman(num));
+    }
+
+    void test_longestCommonPrefix() {
+        String[] strs = new String[]{"flower","flow","flight"};
+        StringTag stringTag = new StringTag();
+
+        System.out.println("result is " + stringTag.longestCommonPrefix(strs));
+    }
+
+    void test_letterCombinations() {
+        String str = "23";
+        BackTrackingTag backTrackingTag = new BackTrackingTag();
+        System.out.println("result is " + backTrackingTag.letterCombinations(str));
+    }
+
+    void test_removeNthFromEnd() {
+        ListNode head = new ListNode(0);
+        //ListNode p = head;
+        //ListNode p1 = new ListNode(1); p.next = p1;
+        //ListNode p2 = new ListNode(2); p1.next = p2;
+        //ListNode p3 = new ListNode(3); p2.next = p3;
+        //ListNode p4 = new ListNode(4); p3.next = p4;
+        //ListNode p5 = new ListNode(5); p4.next = p5;
+
+        int n = 1;
+        LinkeListTag linkeListTag = new LinkeListTag();
+        System.out.println(linkeListTag.removeNthFromEnd(head, n));
+    }
+
+    void test_swapPairs() {
+        ListNode head = new ListNode(0);
+        ListNode p = head;
+        ListNode p1 = new ListNode(1); p.next = p1;
+        ListNode p2 = new ListNode(2); p1.next = p2;
+        ListNode p3 = new ListNode(3); p2.next = p3;
+        ListNode p4 = new ListNode(4); p3.next = p4;
+        ListNode p5 = new ListNode(5); p4.next = p5;
+        LinkeListTag linkeListTag = new LinkeListTag();
+        System.out.println(linkeListTag.swapPairs(head));
+    }
+
+    void test_strStr() {
+        String str1 = "mississippi";
+        String str2 = "pi";
+        StringTag stringTag = new StringTag();
+        System.out.println(stringTag.strStr(str1, str2));
+    }
+
+    void test_divide() {
+        int div1 = 0x80000000;
+        int div2 = -1;
+        MathTag mathTag = new MathTag();
+        System.out.println(div1 / div2 + "      " + mathTag.divide(div1, div2));
+    }
 }

@@ -17,6 +17,15 @@ public class Main {
 
         //System.out.println(-1/2);
         //test.test_longestPalindrome();
-        test.test_convert();
+        //test.test_convert();
+        //test.test_reverse();
+        //test.test_myAtoi();
+        //test.test_intToRoman();
+        //test.test_longestCommonPrefix();
+        //test.test_letterCombinations();
+        //test.test_removeNthFromEnd();
+        //test.test_swapPairs();
+        //test.test_strStr();
+        test.test_divide();
     }
 }

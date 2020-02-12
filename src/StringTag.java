@@ -113,4 +113,72 @@ class StringTag {
         }
         return String.valueOf(str);
     }
+
+    /**
+     * 求数组最长相同前缀 -easy 初始设结果为第一个，接着不断缩减
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0)  return "";
+
+        String result = strs[0];
+        for (int i = 0; i < strs.length - 1; i++) {
+            int minLen = Math.min(result.length(), strs[i + 1].length());
+            result = result.substring(0, minLen);
+            while (!strs[i + 1].substring(0, result.length()).equals(result)) {
+                result = result.substring(0, result.length() - 1);
+                if (result.length() == 0) return "";
+            }
+        }
+        return result;
+
+        /** 按列比较，比较麻烦。。
+         *
+
+        StringBuffer buffer = new StringBuffer();
+        int strsLen = strs.length;
+        int charLen = 0;
+
+        if (strsLen == 1) return strs[0];
+
+        while (true) {
+            int i = 0;
+            for (; i < strsLen - 1; i++) {
+                ///if (strs[i].length() == 0) return "";
+                if (charLen >= strs[i].length() || charLen >= strs[i + 1].length()
+                        || strs[i].charAt(charLen) != strs[i + 1].charAt(charLen))
+                    break;
+            }
+            if (i != 0 && i == strsLen - 1 && strs[i].length() != 0) {
+                buffer.append(strs[0].charAt(charLen++));
+            } else {
+                break;
+            }
+        }
+        return buffer.toString();
+         */
+    }
+
+    /**
+     * 求匹配字符串的index -easy 双指针
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public int strStr(String haystack, String needle) {
+        if (needle.length() == 0) return 0;
+        int i = 0, j = 0;
+        for (; i < haystack.length() && j < needle.length(); i++) {
+            if (haystack.charAt(i) == needle.charAt(j))
+                j++;
+            else if (haystack.charAt(i) != needle.charAt(j) && j != 0){
+                i = i - j;
+                j = 0;
+            }
+        }
+        if (j == needle.length())
+            return i - j;
+        else return -1;
+    }
 }
