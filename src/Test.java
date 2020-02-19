@@ -131,4 +131,117 @@ public class Test {
         DynamicProgrammingTag dynamicProgrammingTag = new DynamicProgrammingTag();
         System.out.println(dynamicProgrammingTag.longestValidParentheses(s));
     }
+
+    void test_search() {
+        int[] nums = new int[]{4,5,6,7,0,1,2};
+        int target = 0;
+        BinarySearchTag binarySearchTag = new BinarySearchTag();
+        System.out.println(binarySearchTag.search(nums, target));
+    }
+
+    void test_searchRange() {
+        int[] nums = new int[]{0,0,1,1,1,2,4,4,4,4,5,5,5,6,8,8,9,9,10,10,10};
+        int target = 8;
+        BinarySearchTag binarySearchTag = new BinarySearchTag();
+        System.out.println(Arrays.toString(binarySearchTag.searchRange(nums, target)));
+    }
+
+    void test_myPow() {
+        double x = 0.7;
+        int n = 29;
+        MathTag mathTag = new MathTag();
+        System.out.println(Math.pow(x, n) + "   " + mathTag.myPow(x, n));
+    }
+
+    void test_trap() {
+        int[] height = new int[] {0,1,0,2,1,0,1,3,2,1,2,1};
+        StackTag stackTag = new StackTag();
+        System.out.println(stackTag.trap(height));
+    }
+
+    void test_simplifyPath() {
+        String s = "/..hidden";
+        StackTag stackTag = new StackTag();
+        System.out.println(stackTag.simplifyPath(s));
+    }
+
+    void test_largestRectangleArea() {
+        int[] height = new int[] {2,1,5,6,2,3};
+        StackTag stackTag = new StackTag();
+        System.out.println(stackTag.largestRectangleArea(height));
+    }
+
+    void test_maximalRectangle() {
+        String[][] matrix = new String[][]{
+                {"0", "1"},
+                {"1","0"},
+                //{"1", "0", "0", "1", "0"},
+                //{"1","1","1","1","1"},
+        };
+
+        char[][] m2 = new char[][] {
+                {'0','1','1','0','1'},
+                {'1','1','0','1','0'},
+                {'0','1','1','1','0'},
+                {'1','1','1','1','0'},
+                {'1','1','1','1','1'},
+                {'0','0','0','0','0'}
+        };
+        StackTag stackTag = new StackTag();
+        System.out.println(stackTag.maximalRectangle(matrix));
+    }
+
+    void test_inorderTraversal() {
+        TreeNode root = new TreeNode(1);
+        TreeNode no2 = new TreeNode(2);
+        TreeNode no3 = new TreeNode(3);
+        root.left = null;
+        root.right = no2;
+        no2.left = no3;
+        no2.right = null;
+
+        TreeNode[] x = new TreeNode[] {
+                new TreeNode(1),
+                null,
+                new TreeNode(2),
+                new TreeNode(3)
+        };
+        TreeTag treeTag = new TreeTag();
+        System.out.println(treeTag.inorderTraversal(root));
+    }
+
+    void test_isValidBST() {
+        TreeNode root = new TreeNode(Integer.MIN_VALUE);
+        //root.left = new TreeNode(5);
+        //root.right = new TreeNode(15);
+        //root.right.left = new TreeNode(6);
+        //root.right.right = new TreeNode(20);
+
+        TreeTag treeTag = new TreeTag();
+        System.out.println(treeTag.isValidBST(root));
+    }
+
+    void test_findMode() {
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(2);
+        root.right.right = new TreeNode(2);
+        root.right.right.right = new TreeNode(3);
+        root.right.right.right.left = new TreeNode(3);
+        root.right.right.right.right = new TreeNode(3);
+
+        TreeTag treeTag = new TreeTag();
+        System.out.println(Arrays.toString(treeTag.findMode(root)));
+    }
+
+    void test_zigzagLevelOrder() {
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        TreeTag treeTag = new TreeTag();
+        treeTag.zigzagLevelOrder(root);
+    }
 }

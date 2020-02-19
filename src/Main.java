@@ -28,6 +28,17 @@ public class Main {
         //test.test_strStr();
         //test.test_divide();
         //test.test_findSubstring();
-        test.test_longestValidParentheses();
+        //test.test_longestValidParentheses();
+        //test.test_search();
+        //test.test_searchRange();
+        //test.test_myPow();
+        //test.test_trap();
+        //test.test_simplifyPath();
+        //test.test_largestRectangleArea();
+        //test.test_maximalRectangle();
+        //test.test_inorderTraversal();
+        //test.test_isValidBST();
+        //test.test_findMode();
+        test.test_zigzagLevelOrder();
     }
 }

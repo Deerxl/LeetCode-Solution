@@ -255,4 +255,31 @@ public class MathTag {
 
         return (negDiv1 == negDiv2) ? result : -result;
     }
+
+    /**
+     * 求幂 -medium 若 n < 0，可以将x取倒数 再进行求解。使用递归，求一半的幂次
+     * @param x
+     * @param n
+     * @return
+     */
+    public double myPow(double x, int n) {
+        if (n == 0 || x == 1) return 1;
+        long n1 = (long)n;
+        if (n < 0 && x != 0) {
+            x = 1 / x;
+            n = -n;
+        }
+
+        return singlePow(x, n);
+    }
+
+    private double singlePow(double x, int n) {
+        if (n == 0) return 1;
+        double half = singlePow(x, n / 2);
+        if (n % 2 == 0) {
+            return half * half;
+        } else {
+            return half * half * x;
+        }
+    }
 }

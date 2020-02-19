@@ -43,8 +43,21 @@ public class DynamicProgrammingTag {
      */
     public int longestValidParentheses(String s) {
         int maxLen = 0;
-        
-        return  maxLen;
+        int[] dp = new int[s.length()];
+
+        for (int i = 1; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == ')') {
+                if (s.charAt(i - 1) == '(') {       // ...()
+                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
+                } else if (i - dp[i - 1] - 1 >= 0 && s.charAt(i - dp[i - 1] - 1) == '(') {        // ...))
+                    dp[i] = dp[i - 1] + 2 + (i - dp[i - 1] - 2 >= 0 ? dp[i - dp[i - 1] - 2] : 0);
+                }
+            }
+            maxLen = Math.max(maxLen, dp[i]);
+        }
+
+        return maxLen;
         /**栈
 
         int maxLen = 0;
@@ -114,5 +127,41 @@ public class DynamicProgrammingTag {
         return maxLen;
 
          */
+    }
+
+    /**
+     * 求二维二进制数组的“1”构成的最大长方形面积 -hard 动态规划，先求每一行的最大宽度，再向上求最大面积。
+     * @param matrix
+     * @return
+     */
+    public int maximalRectangle(char[][] matrix) {
+        int maxArea = 0;
+        int[][] intMatrix = new int[matrix.length][];
+        for (int i = 0; i < matrix.length; i++) {
+            int[] newLine = new int[matrix[i].length];
+            for (int j = 0; j < matrix[i].length; j++) {
+                int temp = Integer.parseInt(String.valueOf(matrix[i][j]));
+                if (temp == 1) newLine[j] = (j == 0 ? temp : temp + newLine[j - 1]);
+            }
+            intMatrix[i] = newLine;
+        }
+
+        for (int i = 0; i < intMatrix.length; i++) {
+            for (int j = 0; j < intMatrix[i].length; j++) {
+                if (intMatrix[i][j] != 0) {
+                    int tempi = i;
+                    int minLen = Integer.MAX_VALUE, maxHeight = 0, tempMaxArea = 0;
+                    do {
+                        minLen = Math.min(minLen, intMatrix[tempi][j]);
+                        maxHeight++;
+                        tempMaxArea = Math.max(tempMaxArea, minLen * maxHeight);
+                    } while (--tempi >= 0 && intMatrix[tempi][j] != 0);
+                    maxArea = Math.max(maxArea, tempMaxArea);
+                }
+
+            }
+        }
+        return maxArea;
+
     }
 }
