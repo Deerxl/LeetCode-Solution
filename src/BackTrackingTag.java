@@ -5,8 +5,6 @@ import java.util.List;
 public class BackTrackingTag {
     /**
      * 求九宫格按键字母组合 -medium 获得一个数字，和前面的组合结果再次组合
-     * @param digits
-     * @return
      */
     public List<String> letterCombinations(String digits) {
         if (digits == null || digits.length() == 0) return null;
@@ -48,18 +46,18 @@ public class BackTrackingTag {
         for (int i = 1; i < n * 2; i++) {
             List<String> tmp = new ArrayList<>();
 
-            for (int j = 0; j < results.size(); j++) {
+            for (String result : results) {
                 int left = 1, right = 0;
-                for (int k = 1; k < results.get(j).length(); k++) {
-                    if (results.get(j).charAt(k) == '(') left++;
+                for (int k = 1; k < result.length(); k++) {
+                    if (result.charAt(k) == '(') left++;
 
                 }
                 if (right < left) {
-                    String s = results.get(j).concat(String.valueOf(')'));
+                    String s = result.concat(String.valueOf(')'));
                     tmp.add(s);
                 }
                 if (left < n) {
-                    String s = results.get(j).concat(String.valueOf('('));
+                    String s = result.concat(String.valueOf('('));
                     tmp.add(s);
                 }
             }

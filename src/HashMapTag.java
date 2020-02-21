@@ -6,9 +6,6 @@ import java.util.Map;
 public class HashMapTag {
     /**
      * 找不限顺序的字串的所有index -hard 2个hashMap可以解决
-     * @param s
-     * @param words
-     * @return
      */
     public List<Integer> findSubstring(String s, String[] words) {
         List<Integer> results = new ArrayList<>();

@@ -1,9 +1,6 @@
 public class BinarySearchTag {
     /**
      * 求两个数组的中位数 -hard 二分法 分治法
-     * @param nums1
-     * @param nums2
-     * @return
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length;
@@ -59,9 +56,6 @@ public class BinarySearchTag {
 
     /**
      * 求旋转后的数组的数的index -medium 二分法
-     * @param nums
-     * @param target
-     * @return
      */
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
@@ -91,9 +85,6 @@ public class BinarySearchTag {
 
     /**
      * 求target在数组中出现的首尾index -medium 二分法
-     * @param nums
-     * @param target
-     * @return
      */
     public int[] searchRange(int[] nums, int target) {
         int[] defaultRes = new int[]{-1, -1};
@@ -172,9 +163,6 @@ public class BinarySearchTag {
 
     /**
      * 二分法求target索引  -easy
-     * @param nums
-     * @param target
-     * @return
      */
     public int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) return 0;

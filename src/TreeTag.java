@@ -43,8 +43,6 @@ public class TreeTag {
 
     /**
      * 判断一棵树是不是二叉搜索树 -medium 中序遍历，栈
-     * @param root
-     * @return
      */
     public boolean isValidBST(TreeNode root) {
         if (root == null) return true;

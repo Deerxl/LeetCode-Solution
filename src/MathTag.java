@@ -139,8 +139,6 @@ public class MathTag {
 
     /**
      * 求整数是否是对称的 -easy 求相反序列的数 和 原数 是否相等
-     * @param x
-     * @return
      */
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
@@ -155,8 +153,6 @@ public class MathTag {
 
     /**
      * 把int转转为罗马表示数字 -medium
-     * @param num
-     * @return
      */
     public String intToRoman(int num) {
         StringBuffer buffer = new StringBuffer();
@@ -207,9 +203,6 @@ public class MathTag {
 
     /**
      * 求除法运算结果 -medium  注意边界！！可以换成正数用移位运算
-     * @param dividend
-     * @param divisor
-     * @return
      */
     public int divide(int dividend, int divisor) {
         int result = 0;
@@ -258,9 +251,6 @@ public class MathTag {
 
     /**
      * 求幂 -medium 若 n < 0，可以将x取倒数 再进行求解。使用递归，求一半的幂次
-     * @param x
-     * @param n
-     * @return
      */
     public double myPow(double x, int n) {
         if (n == 0 || x == 1) return 1;

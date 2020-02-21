@@ -38,8 +38,6 @@ public class DynamicProgrammingTag {
 
     /**
      * 求有效括号对的最长长度 -hard 栈 动态规划 比较容易
-     * @param s
-     * @return
      */
     public int longestValidParentheses(String s) {
         int maxLen = 0;
@@ -131,8 +129,6 @@ public class DynamicProgrammingTag {
 
     /**
      * 求二维二进制数组的“1”构成的最大长方形面积 -hard 动态规划，先求每一行的最大宽度，再向上求最大面积。
-     * @param matrix
-     * @return
      */
     public int maximalRectangle(char[][] matrix) {
         int maxArea = 0;

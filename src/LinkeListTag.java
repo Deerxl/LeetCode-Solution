@@ -3,9 +3,6 @@ import java.util.Hashtable;
 public class LinkeListTag {
     /**
      * 链表，求两个链表的和 -medium
-     * @param l1
-     * @param l2
-     * @return
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
@@ -76,9 +73,6 @@ public class LinkeListTag {
 
     /**
      * 删除倒数第n个节点 -medium
-     * @param head
-     * @param n
-     * @return
      */
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode tmp = head;
@@ -102,9 +96,6 @@ public class LinkeListTag {
 
     /**
      * 按序合并两list -easy 递归
-     * @param l1
-     * @param l2
-     * @return
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;

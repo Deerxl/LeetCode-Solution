@@ -1,9 +1,10 @@
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class HeapTag {
 
     /**
      * 合并 K个有序list -hard 分治法 堆
-     * @param lists
-     * @return
      */
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
@@ -37,4 +38,19 @@ public class HeapTag {
         }
     }
 
+    /**
+     * 寻找第 k 大的数 -medium 堆 PriorityQueue
+     */
+    public int findKthLargest(int[] nums, int k) {
+        Queue<Integer> queue = new PriorityQueue<Integer>();
+
+        for (int num : nums) {
+            queue.add(num);
+
+            if (queue.size() > k) {
+                queue.poll();
+            }
+        }
+        return queue.poll();
+    }
 }

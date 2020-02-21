@@ -3,8 +3,6 @@ import java.util.*;
 class StringTag {
     /**
      * 求无重复子串的最长长度 -medium 滑动窗口 hash map
-     * @param s
-     * @return
      */
     int lengthOfLongestSubstring(String s) {
         if (s.length() <= 1) return s.length();
@@ -42,8 +40,6 @@ class StringTag {
 
     /**
      * 找最长的回文子串 -medium 动态规划  中心扩展
-     * @param s
-     * @return
      */
     public String longestPalindrome(String s) {
         if (s.length() == 0) return "";
@@ -74,9 +70,6 @@ class StringTag {
 
     /**
      * 求字符串z字形排列后的顺序 -medium
-     * @param s
-     * @param numRows
-     * @return
      */
     public String convert(String s, int numRows) {
         if (numRows <= 1 || numRows >= s.length()) return s;
@@ -114,8 +107,6 @@ class StringTag {
 
     /**
      * 求数组最长相同前缀 -easy 初始设结果为第一个，接着不断缩减
-     * @param strs
-     * @return
      */
     public String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0)  return "";
@@ -160,9 +151,6 @@ class StringTag {
 
     /**
      * 求匹配字符串的index -easy 双指针
-     * @param haystack
-     * @param needle
-     * @return
      */
     public int strStr(String haystack, String needle) {
         if (needle.length() == 0) return 0;
