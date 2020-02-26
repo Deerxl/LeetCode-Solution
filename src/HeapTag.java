@@ -1,3 +1,6 @@
+import javax.print.DocFlavor;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -39,7 +42,7 @@ public class HeapTag {
     }
 
     /**
-     * 寻找第 k 大的数 -medium 堆 PriorityQueue
+     * 寻找第 k 大的数 -medium 堆 PriorityQueue 小顶堆
      */
     public int findKthLargest(int[] nums, int k) {
         Queue<Integer> queue = new PriorityQueue<Integer>();
@@ -52,5 +55,28 @@ public class HeapTag {
             }
         }
         return queue.poll();
+    }
+
+    /**
+     * 求数组最小的k个数 -easy 大顶堆
+     */
+    public int[] getLeastNumbers(int[] arr, int k) {
+        if (k == 0 || arr == null || arr.length == 0) return new int[]{};
+        Queue<Integer> queue = new PriorityQueue<>(k, (o1, o2) -> o2 - o1);
+
+        for (int value : arr) {
+            queue.add(value);
+
+            if (queue.size() > k) {
+                queue.poll();
+            }
+        }
+
+        int[] res = new int[k];
+        for (int i = 0; queue.size() > 0; i++) {
+            res[i] = queue.poll();
+        }
+
+        return res;
     }
 }

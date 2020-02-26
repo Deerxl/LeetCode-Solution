@@ -26,9 +26,6 @@ public class ArrayTag {
 
     /**
      * 求两个数组的中位数 -hard 二分法 分治法
-     * @param nums1
-     * @param nums2
-     * @return
      */
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         /**
@@ -177,9 +174,6 @@ public class ArrayTag {
 
     /**
      * 求最大面积 -medium 双指针法
-     *
-     * @param height
-     * @return max area
      */
     public int maxArea(int[] height) {
         int maxV = 0;
@@ -197,8 +191,6 @@ public class ArrayTag {
 
     /**
      * 求和为 0 的三数组合 -medium 双指针法
-     * @param nums
-     * @return
      */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -271,9 +263,6 @@ public class ArrayTag {
 
     /**
      * 求和最接近 target 的三个数 -medium 双指针
-     * @param nums
-     * @param target
-     * @return
      */
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
@@ -310,9 +299,6 @@ public class ArrayTag {
 
     /**
      * 求和为target的四个数组合 -medium 双指针 注意排除冗余判断以加快速度！
-     * @param nums
-     * @param target
-     * @return
      */
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();
@@ -371,8 +357,6 @@ public class ArrayTag {
 
     /**
      * 去除数组重复元素并返回长度 -easy 双指针 i为慢针 j为快针
-     * @param nums
-     * @return
      */
     public int removeDuplicates(int[] nums) {
         /** 方法一 较慢
@@ -404,9 +388,6 @@ public class ArrayTag {
 
     /**
      * 计算非val元素的个数 -easy
-     * @param nums
-     * @param val
-     * @return
      */
     public int removeElement(int[] nums, int val) {
         if (nums.length == 0) return 0;
@@ -423,8 +404,6 @@ public class ArrayTag {
 
     /**
      * 找到比此数组代表的数字大的最少的数组排列 -medium 对尾部递减的 找到拐点 交换后 再排序
-     * @param nums
-     * @return
      */
     public int[] nextPermutation(int[] nums) {
         int i = nums.length - 1;
@@ -460,5 +439,16 @@ public class ArrayTag {
         return nums;
     }
 
-
+    /**
+     * 数组 最大子序列和 -easy
+     */
+    public int maxSubArray(int[] nums) {
+        if (nums == null || nums.length == 0) return Integer.MIN_VALUE;
+        int maxVal = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            nums[i] = Math.max(nums[i], nums[i - 1]);
+            maxVal = Math.max(maxVal, nums[i]);
+        }
+        return maxVal;
+    }
 }

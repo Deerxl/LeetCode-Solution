@@ -244,4 +244,31 @@ public class Test {
         TreeTag treeTag = new TreeTag();
         treeTag.zigzagLevelOrder(root);
     }
+
+    void test_findNumberIn2DArray () {
+        int[][] nums = new int[][] {
+                {2, 5},
+                {2, 8},
+                {7, 9},
+                {7, 11},
+                {9, 11}
+        };
+        int target = 7;
+        JianZhiOfferTag offer  = new JianZhiOfferTag();
+        offer.findNumberIn2DArray(nums, target);
+    }
+
+    void test_buildTree() {
+        int[] preorder = new int[] {3,9,20,15,7};
+        int[] inorder = new int[] {9,3,15,20,7};
+        JianZhiOfferTag offer = new JianZhiOfferTag();
+        System.out.println(offer.buildTree(preorder, inorder));
+    }
+
+    void test_getLeastNumbers() {
+        int[] arr = new int[] {0,0,0,2,0,5};
+        int k = 0;
+        HeapTag heapTag = new HeapTag();
+        heapTag.getLeastNumbers(arr, k);
+    }
 }
