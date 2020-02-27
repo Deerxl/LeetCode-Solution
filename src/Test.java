@@ -271,4 +271,12 @@ public class Test {
         HeapTag heapTag = new HeapTag();
         heapTag.getLeastNumbers(arr, k);
     }
+
+    void test_movingCount() {
+        int m = 16;
+        int n = 8;
+        int k = 4;
+        JianZhiOfferTag offer = new JianZhiOfferTag();
+        System.out.println(offer.movingCount(m, n, k));
+    }
 }

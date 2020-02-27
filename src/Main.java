@@ -42,6 +42,7 @@ public class Main {
         //test.test_zigzagLevelOrder();
         //test.test_findNumberIn2DArray ();
         //test.test_buildTree();
-        test.test_getLeastNumbers();
+        //test.test_getLeastNumbers();
+        test.test_movingCount();
     }
 }
