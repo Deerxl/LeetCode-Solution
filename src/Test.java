@@ -279,4 +279,32 @@ public class Test {
         JianZhiOfferTag offer = new JianZhiOfferTag();
         System.out.println(offer.movingCount(m, n, k));
     }
+
+    void test_isNumber() {
+        String s = ".3e-333333333";
+        JianZhiOfferTag offer = new JianZhiOfferTag();
+        System.out.println(offer.isNumber(s));
+    }
+
+    void test_exchange() {
+        int[] nums = new int[] {1,2,3,4};
+        JianZhiOfferTag offer = new JianZhiOfferTag();
+        System.out.println(Arrays.toString(offer.exchange(nums)));
+    }
+
+    void test_spiralOrder() {
+        int[][] nums = new int[][] {
+                {1},
+                {2},
+                {3},
+                {4},
+                {5},
+                {6},
+                {7},
+                {8},
+                {9}
+        };
+        JianZhiOfferTag offer = new JianZhiOfferTag();
+        System.out.println(Arrays.toString(offer.spiralOrder(nums)));
+    }
 }

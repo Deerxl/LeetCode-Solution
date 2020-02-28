@@ -43,6 +43,9 @@ public class Main {
         //test.test_findNumberIn2DArray ();
         //test.test_buildTree();
         //test.test_getLeastNumbers();
-        test.test_movingCount();
+        //test.test_movingCount();
+        //test.test_isNumber();
+        //test.test_exchange();
+        test.test_spiralOrder();
     }
 }
