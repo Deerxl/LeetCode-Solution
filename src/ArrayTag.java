@@ -11,9 +11,8 @@ public class ArrayTag {
      * use hash code, save time, but cost memory.
      */
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> amap = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> amap = new HashMap<>();
         int size = nums.length;
-        Vector<Integer> res;
         for (int i = 0; i < size; i++){
             int complement = target - nums[i];
             if (amap.containsKey(complement)){
@@ -450,5 +449,36 @@ public class ArrayTag {
             maxVal = Math.max(maxVal, nums[i]);
         }
         return maxVal;
+    }
+
+    /**
+     * 缺失的第一个正数 -hard 只允许使用常数空间
+     * 先替换 <= 0, > length的数，遍历，找到nums[i]对应的值标记为负数，再次遍历，出现的第一个正数对应的索引即为缺失的数
+     */
+    public int firstMissingPositive(int[] nums) {
+        if (nums == null || nums.length == 0) return 1;
+
+        int num1count = 0, length = nums.length;
+        for (int num : nums) {
+            if (num == 1) num1count++;
+        }
+        if (num1count == 0) return 1;
+        if (length == 1) return 2;
+
+        for (int i = 0; i < length; i++) {
+            if (nums[i] <= 0 || nums[i] > length) nums[i] = 1;
+        }
+
+        for (int i = 0; i < length; i++) {
+            int cur = Math.abs(nums[i]);
+            if (cur == length) nums[0] = -Math.abs(nums[0]);
+            else nums[cur] = -Math.abs(nums[cur]);
+        }
+
+        for (int i = 1; i < length; i++) {
+            if (nums[i] > 0) return i;
+        }
+        if (nums[0] > 0) return length;
+        return length + 1;
     }
 }

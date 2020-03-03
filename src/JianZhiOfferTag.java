@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -715,7 +716,7 @@ public class JianZhiOfferTag {
     }
 
     /**
-     * 31 树的层次遍历 每一层相反顺序 两个栈
+     * 31. 树的层次遍历 每一层相反顺序 两个栈
      */
     public List<List<Integer>> levelOrder3(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
@@ -744,6 +745,95 @@ public class JianZhiOfferTag {
             }
             if (l2.size() > 0) result.add(l2);
         }
+        return result;
+    }
+
+    /**
+     * 32. 正则表达式匹配 -hard 递归，动态规划
+     */
+    public boolean isMatch(String s, String p) {
+        if (p == null || p.length() == 0) return s.isEmpty();
+        boolean first = s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
+
+        if (p.length() >= 2 && p.charAt(1) == '*') {
+            return isMatch(s, p.substring(2)) || (first && isMatch(s.substring(1), p));
+        } else {
+            return first && isMatch(s.substring(1), p.substring(1));
+        }
+    }
+
+    /**
+     * 33. 判断给定的数组是不是二叉搜索树的后序遍历 -medium 递归，分成左右子树求
+     */
+    public boolean verifyPostorder(int[] postorder) {
+        if (postorder == null || postorder.length < 2) return true;
+
+        return helper(postorder, 0, postorder.length - 1);
+    }
+
+    boolean helper(int[] postorder, int left, int right) {
+        if (left == right) return true;
+
+        int cut = right;
+        for (int i = left; i < right; i++) {
+            if (postorder[i] > postorder[right]) {
+                cut = i;
+                break;
+            }
+        }
+
+        for (int i = cut + 1; i < right; i++) {
+            if (postorder[i] < postorder[right])
+                return false;
+        }
+
+        boolean l, r;
+        if (cut > left) {
+            l = helper(postorder, left, cut - 1);
+            if (!l) return false;
+        }
+        if (cut < right) {
+            r = helper(postorder, cut, right - 1);
+            return r;
+        }
+
+        return true;
+    }
+
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null || root.val > sum) return result;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        int curSum = root.val;
+        while (!stack.empty()) {
+            TreeNode cur = stack.peek();
+
+            while (cur.left != null && curSum + cur.left.val <= sum) {
+                stack.push(cur.left);
+                cur = cur.left;
+                curSum += cur.val;
+            }
+
+            if (curSum == sum) {
+                List<Integer> list = new ArrayList<>();
+                int i = stack.size() - 1;
+                while (i >= 0) {
+                    list.add(stack.get(i--).val);
+                }
+                result.add(list);
+            } else {
+                while (cur.right == null && !stack.empty()) {
+                    cur = stack.pop();
+                }
+            }
+
+
+
+        }
+
+
         return result;
     }
 

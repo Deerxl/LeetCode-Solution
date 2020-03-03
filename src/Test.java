@@ -1,5 +1,4 @@
-import javax.print.DocFlavor;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -306,5 +305,19 @@ public class Test {
         };
         JianZhiOfferTag offer = new JianZhiOfferTag();
         System.out.println(Arrays.toString(offer.spiralOrder(nums)));
+    }
+
+    void test_isMatch() {
+        String s = "abccbcddsd";
+        String p = "abc*bcd*.d";
+        DynamicProgrammingTag tag = new DynamicProgrammingTag();
+        System.out.println(tag.isMatch(s, p));
+
+    }
+
+    void test_verifyPostorder() {
+        int[] nums = new int[] {3,10,6,9,2};
+        JianZhiOfferTag offer = new JianZhiOfferTag();
+        System.out.println(offer.verifyPostorder(nums));
     }
 }
