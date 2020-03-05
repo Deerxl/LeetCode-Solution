@@ -1,4 +1,6 @@
 
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -319,5 +321,18 @@ public class Test {
         int[] nums = new int[] {3,10,6,9,2};
         JianZhiOfferTag offer = new JianZhiOfferTag();
         System.out.println(offer.verifyPostorder(nums));
+    }
+
+    void test_sort() {
+        int[] nums = new int[] {9,8,7,6,5,4,3,2,1,0};
+        SortTag sortTag = new SortTag();
+        //System.out.println(Arrays.toString(sortTag.bubbleSort(nums)));
+        //System.out.println(Arrays.toString(sortTag.selectSort(nums)));
+        //System.out.println(Arrays.toString(sortTag.insertSort(nums)));
+        //System.out.println(Arrays.toString(sortTag.shellSort(nums)));
+        //System.out.println(Arrays.toString(sortTag.mergeSort(nums)));
+        //System.out.println(Arrays.toString(sortTag.quickSort(nums)));
+        //System.out.println(Arrays.toString(sortTag.heapSort(nums)));
+        System.out.println(Arrays.toString(sortTag.countSort(nums)));
     }
 }

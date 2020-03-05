@@ -47,7 +47,8 @@ public class Main {
         //test.test_isNumber();
         //test.test_exchange();
         //test.test_spiralOrder();
-        test.test_isMatch();
+        //test.test_isMatch();
         //test.test_verifyPostorder();
+        test.test_sort();
     }
 }
