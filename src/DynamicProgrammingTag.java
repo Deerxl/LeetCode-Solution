@@ -162,7 +162,7 @@ public class DynamicProgrammingTag {
     }
 
     /**
-     * 正则表达式匹配 -hard 递归
+     * 正则表达式匹配 -hard 动态规划
      */
     public boolean isMatch(String s, String p) {
         if (s == null || p == null) return false;

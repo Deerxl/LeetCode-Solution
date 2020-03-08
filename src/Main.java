@@ -49,6 +49,7 @@ public class Main {
         //test.test_spiralOrder();
         //test.test_isMatch();
         //test.test_verifyPostorder();
-        test.test_sort();
+        //test.test_sort();
+        test.test_combinationSum();
     }
 }

@@ -1,4 +1,5 @@
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.util.Arrays;
@@ -334,5 +335,12 @@ public class Test {
         //System.out.println(Arrays.toString(sortTag.quickSort(nums)));
         //System.out.println(Arrays.toString(sortTag.heapSort(nums)));
         System.out.println(Arrays.toString(sortTag.countSort(nums)));
+    }
+
+    void test_combinationSum() {
+        int[] nums = new int[] {2,3,6,7};
+        int target = 7;
+        DFSTag dfsTag = new DFSTag();
+        System.out.println(dfsTag.combinationSum(nums, target));
     }
 }
