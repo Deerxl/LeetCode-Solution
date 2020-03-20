@@ -9,6 +9,10 @@ public class ArrayTag {
      * return [0, 1].
      *
      * use hash code, save time, but cost memory.
+     *
+     * @param nums array
+     * @param target the needed sum
+     * @return two nums
      */
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> amap = new HashMap<>();

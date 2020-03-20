@@ -272,4 +272,19 @@ public class MathTag {
             return half * half * x;
         }
     }
+
+    public void getContinueNums(int N, int L) {
+        for (int n = L; n <= 100; n++) {
+            if ((2 * N + n - n * n) % (2 * n) == 0) {
+                int a1 = (2 * N + n - n * n) / (2 * n);
+                System.out.print(a1);
+                for (int i = 2; i <= n; i++) {
+                    System.out.print(" ");
+                    System.out.print(++a1);
+                }
+                return;
+            }
+        }
+        System.out.println("No");
+    }
 }
