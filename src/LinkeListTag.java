@@ -1,4 +1,6 @@
+import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 
 public class LinkeListTag {
     /**
@@ -215,7 +217,26 @@ public class LinkeListTag {
         }
         return pre;
     }
+
+    /**
+     * 深拷贝链表 -medium 用hashMap来存储原节点和新节点
+     */
+    public Node copyRandomList(Node head) {
+        Map<Node, Node> map = new HashMap<>();
+        Node dump = head;
+        while (dump != null) {
+            map.put(dump, new Node(dump.val));
+            dump = dump.next;
         }
+        dump = head;
+        while (dump != null) {
+            map.get(dump).next = map.get(dump.next);
+            map.get(dump).random = map.get(dump.random);
+            dump = dump.next;
+        }
+        return map.get(head);
+    }
+}
 
 
 
@@ -223,4 +244,17 @@ class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
+}
+
+// Definition for a Node.
+class Node {
+    int val;
+    Node next;
+    Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
 }

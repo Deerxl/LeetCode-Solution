@@ -189,6 +189,30 @@ public class TreeTag {
         Collections.reverse(result);
         return result;
     }
+
+    List<List<Integer>> result = new ArrayList<>();
+    List<Integer> list = new ArrayList<>();
+
+    /**
+     * 求根到某一路径的和为sum的集和 -medium 深度优先搜索
+     */
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        helper(root, sum);
+
+        return result;
+    }
+
+    private void helper(TreeNode root, int rest) {
+        if (root == null) return;
+
+        list.add(root.val);
+        rest -= root.val;
+        if (rest == 0 && root.left == null && root.right == null)
+            result.add(new ArrayList(list));
+        helper(root.left, rest);
+        helper(root.right, rest);
+        list.remove(list.size() - 1);
+    }
 }
 
 class TreeNode {
